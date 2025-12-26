@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Kopi Nusantara Pekanbaru</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-coffee"></i>
+                <span>Kopi Nusantara</span>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="menu.html" class="active"><i class="fas fa-utensils"></i> Menu</a></li>
+                <li><a href="tentang.html"><i class="fas fa-info-circle"></i> Tentang</a></li>
+                <li><a href="kontak.html"><i class="fas fa-phone-alt"></i> Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <div class="container">
+            <h1>Menu Lengkap Kami</h1>
+            <p>Pilihan terbaik kopi, makanan, dan camilan dengan cita rasa autentik</p>
+            
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">Semua Menu</button>
+                <button class="category-btn" data-category="kopi">Kopi</button>
+                <button class="category-btn" data-category="non-kopi">Non-Kopi</button>
+                <button class="category-btn" data-category="makanan">Makanan</button>
+                <button class="category-btn" data-category="snack">Snack</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Items -->
+    <section class="full-menu">
+        <div class="container">
+            <!-- Kopi -->
+            <div class="menu-category" id="kopi">
+                <h2 class="category-title">
+                    <i class="fas fa-coffee"></i>
+                    Minuman Kopi
+                </h2>
+                
+                <div class="menu-items-grid">
+                    <div class="menu-item-card" data-category="kopi">
+                        <div class="menu-card-image" style="background-image: url('https://images.unsplash.com/photo-1568649929103-28ffbefaca1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Kopi Tubruk</h3>
+                                <span class="menu-price">Rp 25.000</span>
+                            </div>
+                            <p>Kopi asli Indonesia dengan proses tubruk tradisional, memberikan cita rasa kuat dan autentik.</p>
+                            <div class="menu-tags">
+                                <span class="tag">Hot/Ice</span>
+                                <span class="tag">Signature</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-card" data-category="kopi">
+                        <div class="menu-card-image" style="background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Espresso</h3>
+                                <span class="menu-price">Rp 30.000</span>
+                            </div>
+                            <p>Kopi espresso dengan crema yang sempurna, disajikan dengan teknik penyeduhan profesional.</p>
+                            <div class="menu-tags">
+                                <span class="tag">Hot</span>
+                                <span class="tag">Strong</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-card" data-category="kopi">
+                        <div class="menu-card-image" style="background-image: url('https://images.unsplash.com/photo-1534778101976-62847782c213?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Cappuccino</h3>
+                                <span class="menu-price">Rp 35.000</span>
+                            </div>
+                            <p>Espresso dengan foam susu yang lembut dan creamy, ditaburi bubuk coklat.</p>
+                            <div class="menu-tags">
+                                <span class="tag">Hot</span>
+                                <span class="tag">Milky</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-card" data-category="kopi">
+                        <div class="menu-card-image" style="background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Latte Art</h3>
+                                <span class="menu-price">Rp 40.000</span>
+                            </div>
+                            <p>Kopi latte dengan seni gambar di atasnya, perpaduan sempurna rasa dan estetika.</p>
+                            <div class="menu-tags">
+                                <span class="tag">Hot</span>
+                                <span class="tag">Instagramable</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Non-Kopi -->
+            <div class="menu-category" id="non-kopi">
+                <h2 class="category-title">
+                    <i class="fas fa-glass-whiskey"></i>
+                    Minuman Non-Kopi
+                </h2>
+                
+                <div class="menu-items-grid">
+                    <div class="menu-item-card" data-category="non-kopi">
+                        <div class="menu-card-image" style="background-image: url('https://images.unsplash.com/photo-1621203066801-a3c5c43c04c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Teh Tarik</h3>
+                                <span class="menu-price">Rp 20.000</span>
+                            </div>
+                            <p>Teh susu khas dengan teknik "tarik" yang menghasilkan tekstur yang lembut.</p>
+                            <div class="menu-tags">
+                                <span class="tag">Hot/Ice</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-card" data-category="non-kopi">
+                        <div class="menu-card-image" style="background-image: url('https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Chocolate Milkshake</h3>
+                                <span class="menu-price">Rp 35.000</span>
+                            </div>
+                            <p>Milkshake coklat kental dengan whipped cream dan taburan choco chips.</p>
+                            <div class="menu-tags">
+                                <span class="tag">Cold</span>
+                                <span class="tag">Sweet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Makanan -->
+            <div class="menu-category" id="makanan">
+                <h2 class="category-title">
+                    <i class="fas fa-utensils"></i>
+                    Makanan
+                </h2>
+                
+                <div class="menu-items-grid">
+                    <div class="menu-item-card" data-category="makanan">
+                        <div class="menu-card-image" style="background-image: url('https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Nasi Goreng Spesial</h3>
+                                <span class="menu-price">Rp 45.000</span>
+                            </div>
+                            <p>Nasi goreng dengan telur, ayam, dan sayuran, disajikan dengan kerupuk dan acar.</p>
+                            <div class="menu-tags">
+                                <span class="tag">Best Seller</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-card" data-category="makanan">
+                        <div class="menu-card-image" style="background-image: url('https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Mie Goreng Jawa</h3>
+                                <span class="menu-price">Rp 40.000</span>
+                            </div>
+                            <p>Mie goreng khas Jawa dengan bumbu rempah yang kaya rasa.</p>
+                            <div class="menu-tags">
+                                <span class="tag">Spicy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Snack -->
+            <div class="menu-category" id="snack">
+                <h2 class="category-title">
+                    <i class="fas fa-cookie-bite"></i>
+                    Snack & Dessert
+                </h2>
+                
+                <div class="menu-items-grid">
+                    <div class="menu-item-card" data-category="snack">
+                        <div class="menu-card-image" style="background-image: url('https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Roti Bakar Coklat Keju</h3>
+                                <span class="menu-price">Rp 30.000</span>
+                            </div>
+                            <p>Roti bakar dengan olesan coklat dan keju leleh yang menggugah selera.</p>
+                            <div class="menu-tags">
+                                <span class="tag">Sweet</span>
+                                <span class="tag">Cheesy</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-card" data-category="snack">
+                        <div class="menu-card-image" style="background-image: url('https://images.unsplash.com/photo-1574085733277-851d9d856a3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Kue Brownies</h3>
+                                <span class="menu-price">Rp 35.000</span>
+                            </div>
+                            <p>Brownies coklat dengan tekstur lembut dan padat, cocok untuk teman minum kopi.</p>
+                            <div class="menu-tags">
+                                <span class="tag">Chocolate</span>
+                                <span class="tag">Best Seller</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-note">
+                <p><i class="fas fa-info-circle"></i> Semua harga sudah termasuk pajak. Menu dapat berubah sewaktu-waktu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-coffee"></i>
+                    <h2>Kopi Nusantara</h2>
+                    <p>Kopi terbaik dengan cita rasa autentik Indonesia</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="menu.html" class="active">Menu</a></li>
+                        <li><a href="tentang.html">Tentang Kami</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Hubungi Kami</h3>
+                    <p><i class="fas fa-phone"></i> (0761) 123456</p>
+                    <p><i class="fas fa-envelope"></i> info@kopinusantara.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Sudirman No. 123, Pekanbaru</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kopi Nusantara Pekanbaru. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
