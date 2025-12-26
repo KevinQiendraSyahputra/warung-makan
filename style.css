@@ -91,7 +91,7 @@ body {
     font-size: 18px;
 }
 
-/* Header Styles - OPTIMASI MOBILE */
+/* Header Styles - OPTIMASI MOBILE DENGAN HAMBURGER DI POJOKAN */
 header {
     background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -107,12 +107,15 @@ header {
     align-items: center;
     padding: 5px 0;
     min-height: 60px;
+    position: relative;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 8px;
+    flex: 1;
+    min-width: 0; /* Untuk ellipsis */
 }
 
 .logo i {
@@ -126,6 +129,9 @@ header {
     color: var(--primary);
     font-weight: 700;
     line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .logo span {
@@ -133,9 +139,16 @@ header {
     display: inline-block;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+}
+
 nav ul {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -171,6 +184,7 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+/* HAMBURGER BUTTON - POSISI DI POJOK KANAN */
 .mobile-menu-btn {
     display: none;
     background: none;
@@ -178,16 +192,28 @@ nav ul li a:hover::after {
     font-size: 22px;
     color: var(--primary);
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+    padding: 0;
+    margin: 0;
 }
 
 .mobile-menu-btn:hover {
     background-color: var(--light);
+}
+
+.mobile-menu-btn:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
 /* Hero Section - OPTIMASI MOBILE */
@@ -857,9 +883,25 @@ footer {
         gap: 30px;
     }
     
-    /* Header Mobile */
+    /* Header Mobile - HAMBURGER DI POJOK KANAN */
     .mobile-menu-btn {
         display: flex;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 22px;
+        color: var(--primary);
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        border-radius: 5px;
+        transition: all 0.3s;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
     }
     
     nav ul {
@@ -874,6 +916,7 @@ footer {
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         z-index: 999;
         padding: 20px 0;
+        margin: 0;
     }
     
     nav ul.active {
@@ -957,14 +1000,15 @@ footer {
 
 /* Mobile (576px ke bawah) - OPTIMASI KHUSUS HANDHPHONE */
 @media (max-width: 576px) {
-    /* Header Mobile Kecil */
+    /* Header Mobile Kecil - HAMBURGER DI POJOK KANAN */
     .header-container {
         min-height: 50px;
-        padding: 0;
+        padding: 0 10px;
     }
     
     .logo {
         gap: 6px;
+        padding-left: 5px;
     }
     
     .logo i {
@@ -974,16 +1018,23 @@ footer {
     .logo h1 {
         font-size: 14px;
         line-height: 1.1;
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .mobile-menu-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     nav ul {
         top: 50px;
+        padding: 15px 0;
     }
     
     /* Hero Mobile Kecil */
@@ -1151,6 +1202,14 @@ footer {
 @media (max-width: 360px) {
     .logo h1 {
         font-size: 13px;
+        max-width: 150px;
+    }
+    
+    .mobile-menu-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        right: 8px;
     }
     
     .hero h2 {
@@ -1192,20 +1251,21 @@ footer {
     }
 }
 
-/* Animasi Fade In */
-@keyframes fadeIn {
+/* Animasi untuk Hamburger Menu */
+@keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateX(-20px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
-.fade-in {
-    animation: fadeIn 0.6s ease forwards;
+.nav-menu.active li {
+    animation: slideIn 0.3s ease forwards;
+    animation-delay: calc(0.1s * var(--i, 0));
 }
 
 /* Smooth scrolling untuk anchor links */
