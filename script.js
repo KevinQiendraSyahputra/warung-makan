@@ -1,16 +1,43 @@
-// Mobile Menu Toggle
+// Mobile Menu Toggle dengan Animasi
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const navMenu = document.getElementById('navMenu');
 
 mobileMenuBtn.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     const icon = mobileMenuBtn.querySelector('i');
+    
+    // Animasi icon hamburger
     if (navMenu.classList.contains('active')) {
         icon.classList.remove('fa-bars');
         icon.classList.add('fa-times');
+        
+        // Tambahkan animasi delay untuk setiap item menu
+        const menuItems = document.querySelectorAll('.nav-menu li');
+        menuItems.forEach((item, index) => {
+            item.style.setProperty('--i', index);
+            item.style.opacity = '0';
+            item.style.animation = 'none';
+            
+            setTimeout(() => {
+                item.style.animation = 'slideIn 0.3s ease forwards';
+                item.style.animationDelay = `${index * 0.1}s`;
+            }, 10);
+        });
+        
+        // Prevent body scroll saat menu terbuka
+        document.body.style.overflow = 'hidden';
     } else {
         icon.classList.remove('fa-times');
         icon.classList.add('fa-bars');
+        
+        // Reset animasi
+        const menuItems = document.querySelectorAll('.nav-menu li');
+        menuItems.forEach(item => {
+            item.style.animation = 'none';
+        });
+        
+        // Allow body scroll
+        document.body.style.overflow = '';
     }
 });
 
@@ -21,6 +48,15 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
         const icon = mobileMenuBtn.querySelector('i');
         icon.classList.remove('fa-times');
         icon.classList.add('fa-bars');
+        
+        // Reset animasi
+        const menuItems = document.querySelectorAll('.nav-menu li');
+        menuItems.forEach(item => {
+            item.style.animation = 'none';
+        });
+        
+        // Allow body scroll
+        document.body.style.overflow = '';
     });
 });
 
@@ -319,11 +355,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Gambar di menu TIDAK memiliki efek zoom
-    // Hanya efek angkat pada card saja
     document.querySelectorAll('.menu-item').forEach(card => {
         const img = card.querySelector('img');
         
-        // Pastikan gambar menu TIDAK zoom
         card.addEventListener('mouseenter', function() {
             if (img) {
                 img.style.transform = 'scale(1)'; // Tetap 1, tidak zoom
@@ -352,5 +386,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 icon.style.transform = 'scale(1) rotate(0)';
             }
         });
+    });
+    
+    // Close menu when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        const isClickInsideMenu = navMenu.contains(event.target);
+        const isClickOnHamburger = mobileMenuBtn.contains(event.target);
+        
+        if (navMenu.classList.contains('active') && !isClickInsideMenu && !isClickOnHamburger) {
+            navMenu.classList.remove('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+            
+            const menuItems = document.querySelectorAll('.nav-menu li');
+            menuItems.forEach(item => {
+                item.style.animation = 'none';
+            });
+            
+            document.body.style.overflow = '';
+        }
     });
 });
